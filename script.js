@@ -77,7 +77,7 @@ async function updateMonitoringCategory() {
 
     try {
         // Ganti URL di bawah ini dengan URL Web App Google Apps Script Monitoring System Anda
-        const monitoringUrl = "https://script.google.com/macros/s/AKfycbxf2XDdAnq6oO9vKH7zc5MyGHwfxDuETvGAqfAIQjJMXd2DoCIm1pLtdG1Gz9r6rBY7/exec";
+        const monitoringUrl = "https://script.google.com/macros/s/AKfycbxf2XDdAnq6oO9vKH7cZ5MyGHwfxDuETvGAqfAIQjJMXd2DoCIm1pLtdG1Gz9r6rBY7/exec";
         
         const response = await fetch(`${monitoringUrl}?sheet=${encodeURIComponent(selectedCategory)}`);
         const result = await response.json();
@@ -170,7 +170,7 @@ async function fetchLiveSpreadsheetData() {
 
     try {
         // Ganti URL di bawah ini dengan URL Web App Google Apps Script Repair & Maintenance Report Anda
-        const repairReportUrl = "https://script.google.com/macros/s/MASUKKAN_URL_WEB_APP_REPAIR_REPORT_ANDA_DISINI/exec";
+        const repairReportUrl = "https://script.google.com/macros/s/AKfycbx1r8Y5w6vPiaERtBophgZ1DNP3az1dXXXa5ybSdMlrkK0_pwhRu03KPPOZOpzHUVQYCA/exec";
         
         const response = await fetch(repairReportUrl);
         const result = await response.json();
