@@ -178,7 +178,7 @@ body {
 .page-content { display: none; }
 .page-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
 
-/* OVERVIEW & ANIMASI LIVE PRODUCTION LINE DENGAN KARDUS 3D & GERBANG */
+/* OVERVIEW & ANIMASI LIVE PRODUCTION LINE */
 .banner-panel { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
 .fleet-tag { 
     background: rgba(211, 47, 47, 0.1); 
@@ -205,11 +205,9 @@ body {
     align-items: center;
 }
 
-/* GERBANG PINTU KELUAR DAN PINTU MASUK */
 .factory-gate {
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: 0; bottom: 0;
     width: 140px;
     background: linear-gradient(135deg, #2b2b2b, #111111);
     color: #ffffff;
@@ -243,7 +241,6 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* DESAIN KARDUS 3D ISOMETRIC */
 .box-3d-wrapper {
     position: absolute;
     bottom: 12px;
@@ -284,42 +281,33 @@ body {
 }
 
 .face.back {
-    width: 110px;
-    height: 55px;
+    width: 110px; height: 55px;
     background: #bcaaa4;
     transform: rotateY(180deg) translateZ(25px);
 }
 
 .face.right {
-    width: 50px;
-    height: 55px;
+    width: 50px; height: 55px;
     background: #a1887f;
     transform: rotateY(90deg) translateZ(85px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 9px;
-    font-weight: bold;
-    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px; font-weight: bold; color: #fff;
 }
 
 .face.left {
-    width: 50px;
-    height: 55px;
+    width: 50px; height: 55px;
     background: #8d6e63;
     transform: rotateY(-90deg) translateZ(25px);
 }
 
 .face.top {
-    width: 110px;
-    height: 50px;
+    width: 110px; height: 50px;
     background: #efebe9;
     transform: rotateX(90deg) translateZ(25px);
 }
 
 .face.bottom {
-    width: 110px;
-    height: 50px;
+    width: 110px; height: 50px;
     background: #6d4c41;
     transform: rotateX(-90deg) translateZ(30px);
 }
@@ -397,8 +385,7 @@ body {
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.9);
     color: #1a1a1a;
-    width: 48px;
-    height: 48px;
+    width: 48px; height: 48px;
     border-radius: 50%;
     cursor: pointer;
     font-size: 16px;
@@ -425,8 +412,7 @@ body {
 }
 
 .dot {
-    width: 12px;
-    height: 12px;
+    width: 12px; height: 12px;
     background: rgba(0, 0, 0, 0.15);
     border-radius: 50%;
     cursor: pointer;
@@ -465,8 +451,7 @@ body {
 
 .green-chk {
     appearance: none;
-    width: 16px;
-    height: 16px;
+    width: 16px; height: 16px;
     border: 2px solid rgba(0,0,0,0.25);
     border-radius: 4px;
     background: rgba(255,255,255,0.8);
@@ -489,8 +474,7 @@ body {
     color: #fff;
     font-weight: bold;
     font-size: 11px;
-    left: 2px;
-    top: -3px;
+    left: 2px; top: -3px;
 }
 
 .btn-temp { background: #f57f17; border: none; color: #fff; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s ease; white-space: nowrap; }
@@ -533,46 +517,22 @@ body {
     vertical-align: middle !important;
 }
 
-/* PENGATURAN LEBAR KOLOM REPAIR & MAINTENANCE REPORT */
-.uniform-columns th,
-.uniform-columns td {
-    min-width: 130px;
-    white-space: nowrap;
-}
+/* UKURAN KOLOM KHUSUS REPAIR REPORT */
+.uniform-columns th:nth-child(1), .uniform-columns td:nth-child(1) { width: 120px; } /* Tanggal */
+.uniform-columns th:nth-child(2), .uniform-columns td:nth-child(2) { width: 90px; }  /* Plant */
+.uniform-columns th:nth-child(3), .uniform-columns td:nth-child(3) { width: 120px; } /* Nama Mesin */
+.uniform-columns th:nth-child(4), .uniform-columns td:nth-child(4) { width: 220px; } /* Laporan Kerusakan */
+.uniform-columns th:nth-child(5), .uniform-columns td:nth-child(5) { width: 140px; } /* Kode Barang */
+.uniform-columns th:nth-child(6), .uniform-columns td:nth-child(6) { width: 280px; } /* Progress Status / Final Status */
+.uniform-columns th:nth-child(7), .uniform-columns td:nth-child(7) { width: 150px; } /* Last Update */
+.uniform-columns th:nth-child(8), .uniform-columns td:nth-child(8) { width: 150px; } /* Save Action */
 
-/* KOLOM PROGRESS STATUS DIPERLEBAR AGAR SIMETRIS DAN LEGA (420px) */
-.uniform-columns th:nth-last-child(3),
-.uniform-columns td:nth-last-child(3) {
-    min-width: 420px !important;
-    width: 420px !important;
-    white-space: normal !important;
-    padding: 14px 18px !important;
-}
-
-/* Kolom khusus Last Update */
-.uniform-columns th:nth-last-child(2),
-.uniform-columns td:nth-last-child(2) {
-    min-width: 160px !important;
-    width: 160px !important;
-}
-
-/* Kolom khusus Save Action */
-.uniform-columns th:nth-last-child(1),
-.uniform-columns td:nth-last-child(1) {
-    min-width: 170px !important;
-    width: 170px !important;
-}
-
-/* =========================================================
-   PENGEMBANGAN HALAMAN ABOUT (HERO DENGAN FOTO DAN GRID)
-   ========================================================= */
-
+/* ABOUT PAGE */
 .about-hero-panel {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     gap: 30px;
     align-items: center;
-    position: relative;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 235, 238, 0.4) 100%);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.9);
@@ -582,209 +542,58 @@ body {
     box-shadow: 0 10px 30px rgba(211, 47, 47, 0.08);
 }
 
-.hero-left-box h2 {
-    font-size: 34px;
-    color: #1a1a1a;
-    margin: 12px 0;
-    font-weight: 800;
-}
-
-.hero-lead {
-    font-size: 15px;
-    color: #4a4a4a;
-    line-height: 1.7;
-    margin-bottom: 24px;
-}
-
+.hero-left-box h2 { font-size: 34px; color: #1a1a1a; margin: 12px 0; font-weight: 800; }
+.hero-lead { font-size: 15px; color: #4a4a4a; line-height: 1.7; margin-bottom: 24px; }
 .hero-right-img-box img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    border-radius: 16px;
-    border: 2px solid rgba(255, 255, 255, 0.9);
+    width: 100%; height: 240px; object-fit: cover;
+    border-radius: 16px; border: 2px solid rgba(255, 255, 255, 0.9);
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 .btn-official-site {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 26px;
-    background: linear-gradient(135deg, #e53935, #b71c1c);
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 13px;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 6px 18px rgba(211, 47, 47, 0.35);
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 26px; background: linear-gradient(135deg, #e53935, #b71c1c);
+    color: #ffffff; font-weight: 700; font-size: 13px; border-radius: 10px;
+    text-decoration: none; transition: all 0.3s ease; box-shadow: 0 6px 18px rgba(211, 47, 47, 0.35);
 }
+.btn-official-site:hover { transform: translateY(-3px); background: linear-gradient(135deg, #f44336, #c62828); }
 
-.btn-official-site:hover {
-    background: linear-gradient(135deg, #f44336, #c62828);
-    box-shadow: 0 8px 25px rgba(211, 47, 47, 0.5);
-    transform: translateY(-3px);
-}
+.about-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
+.about-card { background: rgba(255, 255, 255, 0.7); border-radius: 16px; padding: 24px 15px; }
+.about-card h2 { color: #d32f2f; font-size: 26px; font-weight: 800; margin-bottom: 6px; }
+.about-card small { color: #666; font-weight: 700; font-size: 11px; }
 
-.about-grid-4 { 
-    display: grid; 
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px; 
-    text-align: center; 
-}
+.about-main-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.about-story-card { background: rgba(255, 255, 255, 0.75); border-radius: 18px; padding: 28px; line-height: 1.7; font-size: 14px; }
+.about-story-card h3 { font-size: 16px; margin-bottom: 14px; font-weight: 800; display: flex; align-items: center; gap: 10px; }
 
-.about-card {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.9);
-    border-radius: 16px;
-    padding: 24px 15px;
-    transition: all 0.3s ease;
-}
-
-.about-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.9);
-    border-color: rgba(211, 47, 47, 0.3);
-}
-
-.about-card h2 { 
-    color: #d32f2f; 
-    font-size: 26px; 
-    font-weight: 800;
-    margin-bottom: 6px;
-}
-
-.about-card small { 
-    color: #666; 
-    font-weight: 700; 
-    font-size: 11px;
-}
-
-.about-main-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.about-story-card {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.9);
-    border-radius: 18px;
-    padding: 28px;
-    line-height: 1.7;
-    color: #333333;
-    font-size: 14px;
-}
-
-.about-story-card h3 {
-    font-size: 16px;
-    margin-bottom: 14px;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.contact-section-panel {
-    border-radius: 20px;
-    padding: 30px;
-}
-
-.contact-grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    margin-top: 20px;
-}
-
-.contact-card {
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.9);
-    border-radius: 16px;
-    padding: 24px 20px;
-    text-align: center;
-}
-
-.contact-card:hover {
-    border-color: rgba(211, 47, 47, 0.4);
-    transform: translateY(-6px);
-    background: rgba(255, 255, 255, 0.95);
-}
-
-.highlight-contact {
-    background: rgba(255, 245, 245, 0.85);
-    border: 1.5px solid rgba(211, 47, 47, 0.4);
-    position: relative;
-}
-
-.highlight-contact::before {
-    content: 'OFFICIAL HQ';
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: rgba(211, 47, 47, 0.1);
-    color: #d32f2f;
-    font-size: 9px;
-    font-weight: 800;
-    padding: 4px 10px;
-    border-radius: 12px;
-}
+.contact-section-panel { border-radius: 20px; padding: 30px; }
+.contact-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 20px; }
+.contact-card { background: rgba(255, 255, 255, 0.65); border-radius: 16px; padding: 24px 20px; text-align: center; }
+.highlight-contact { background: rgba(255, 245, 245, 0.85); border: 1.5px solid rgba(211, 47, 47, 0.4); position: relative; }
 
 .contact-avatar {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, rgba(211, 47, 47, 0.15), rgba(211, 47, 47, 0.05));
-    border: 1px solid rgba(211, 47, 47, 0.2);
-    color: #d32f2f;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    margin: 0 auto 14px auto;
+    width: 64px; height: 64px; border-radius: 50%;
+    background: rgba(211, 47, 47, 0.1); color: #d32f2f;
+    display: flex; justify-content: center; align-items: center; font-size: 24px; margin: 0 auto 14px auto;
 }
 
+/* PERBAIKAN UKURAN LOGO KARTU KONTAK DI ABOUT */
 .contact-avatar-logo img {
-    width: 56px;
-    height: 56px;
+    width: 56px !important;
+    height: 56px !important;
+    object-fit: cover;
     border-radius: 50%;
     margin-bottom: 12px;
-}
-
-.contact-card h4 {
-    font-size: 16px;
-    color: #1a1a1a;
-    font-weight: 800;
-    margin-bottom: 4px;
-}
-
-.contact-role {
     display: block;
-    font-size: 11px;
-    font-weight: 700;
-    color: #d32f2f;
-    margin-bottom: 16px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.contact-info p {
-    font-size: 12px;
-    color: #4a4a4a;
-    margin-bottom: 8px;
-    text-align: left;
-    line-height: 1.5;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-}
-
-.contact-info i {
-    color: #d32f2f;
-    font-size: 13px;
-    margin-top: 2px;
-}
+.contact-card h4 { font-size: 16px; font-weight: 800; margin-bottom: 4px; }
+.contact-role { display: block; font-size: 11px; font-weight: 700; color: #d32f2f; margin-bottom: 16px; }
+.contact-info p { font-size: 12px; color: #4a4a4a; margin-bottom: 8px; text-align: left; display: flex; gap: 10px; }
+.contact-info i { color: #d32f2f; }
 
 @keyframes fadeIn { 
     from { opacity: 0; transform: translateY(10px); } 

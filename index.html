@@ -80,16 +80,13 @@
                         <span class="dot-red"></span> LIVE INDUSTRIAL PRODUCTION LINE & CORRUGATED CONVEYOR SYSTEM
                     </div>
                     <div class="animation-stage production-stage">
-                        <!-- PINTU KELUAR (KIRI) -->
                         <div class="factory-gate gate-exit">
                             <i class="fa fa-door-open"></i> PINTU KELUAR
                         </div>
 
-                        <!-- LINTASAN KONVEYOR DAN KARDUS 3D -->
                         <div class="conveyor-track">
                             <div class="conveyor-belt-line"></div>
                             
-                            <!-- BOX 1 -->
                             <div class="box-3d-wrapper box-1">
                                 <div class="box-3d">
                                     <div class="face front">PT. SURABAYA MEKABOX</div>
@@ -101,7 +98,6 @@
                                 </div>
                             </div>
 
-                            <!-- BOX 2 -->
                             <div class="box-3d-wrapper box-2">
                                 <div class="box-3d">
                                     <div class="face front">PT. SURABAYA MEKABOX</div>
@@ -113,7 +109,6 @@
                                 </div>
                             </div>
 
-                            <!-- BOX 3 -->
                             <div class="box-3d-wrapper box-3">
                                 <div class="box-3d">
                                     <div class="face front">PT. SURABAYA MEKABOX</div>
@@ -126,7 +121,6 @@
                             </div>
                         </div>
 
-                        <!-- PINTU MASUK (KANAN) -->
                         <div class="factory-gate gate-enter">
                             <i class="fa fa-door-closed"></i> PINTU MASUK
                         </div>
@@ -138,7 +132,6 @@
                     <button class="slider-arrow slider-prev" onclick="moveSlide(-1)"><i class="fa fa-chevron-left"></i></button>
                     
                     <div class="slider-track-wrapper">
-                        <!-- SLIDE 1 -->
                         <div class="overview-slide active-slide">
                             <div class="slide-img-box">
                                 <img src="page1.png" alt="Integrated Facility" onerror="this.src='foto1.png'">
@@ -150,7 +143,6 @@
                             </div>
                         </div>
 
-                        <!-- SLIDE 2 -->
                         <div class="overview-slide">
                             <div class="slide-img-box">
                                 <img src="page2.png" alt="Paper Division" onerror="this.src='foto2.jpg'">
@@ -162,7 +154,6 @@
                             </div>
                         </div>
 
-                        <!-- SLIDE 3 -->
                         <div class="overview-slide">
                             <div class="slide-img-box">
                                 <img src="page3.png" alt="Corrugated Box Division" onerror="this.src='foto3.jpg'">
@@ -174,7 +165,6 @@
                             </div>
                         </div>
 
-                        <!-- SLIDE 4 -->
                         <div class="overview-slide">
                             <div class="slide-img-box">
                                 <img src="page4.png" alt="Quality Control" onerror="this.src='foto4.png'">
@@ -186,7 +176,6 @@
                             </div>
                         </div>
 
-                        <!-- SLIDE 5 -->
                         <div class="overview-slide">
                             <div class="slide-img-box">
                                 <img src="page5.png" alt="Sustainability" onerror="this.src='foto1.png'">
@@ -198,7 +187,6 @@
                             </div>
                         </div>
 
-                        <!-- SLIDE 6 -->
                         <div class="overview-slide">
                             <div class="slide-img-box">
                                 <img src="page6.png" alt="Global Market" onerror="this.src='foto2.jpg'">
@@ -337,41 +325,27 @@
                     <div class="table-header flex-between" style="display: flex; justify-content: space-between; align-items: center;">
                         <div>
                             <h3>LAPORAN PERBAIKAN — ACTIVE MAINTENANCE TICKETS</h3>
-                            <small>REALTIME SPREADSHEET SYNC & PROGRESS CHECKLIST (1-8 KERUSAKAN & KODE BARANG)</small>
+                            <small>REALTIME SPREADSHEET SYNC & PROGRESS CHECKLIST</small>
                         </div>
                         <button class="btn-refresh" onclick="fetchLiveSpreadsheetData()"><i class="fa fa-sync"></i> REFRESH ACTIVE</button>
                     </div>
 
                     <div class="table-responsive" style="margin-top: 15px; overflow-x: auto;">
-                        <table class="glass-table centered-table uniform-columns" style="min-width: 1700px;">
+                        <table class="glass-table centered-table uniform-columns" style="width: 100%;">
                             <thead>
                                 <tr>
-                                    <th>Tanggal Perbaikan</th>
+                                    <th>Tanggal</th>
                                     <th>Plant</th>
                                     <th>Nama Mesin</th>
-                                    <th>1 (Kerusakan)</th>
-                                    <th>2</th>
-                                    <th>3</th>
-                                    <th>4</th>
-                                    <th>5</th>
-                                    <th>6</th>
-                                    <th>7</th>
-                                    <th>8</th>
-                                    <th>Kode Komp 1</th>
-                                    <th>Kode Komp 2</th>
-                                    <th>Kode Komp 3</th>
-                                    <th>Kode Komp 4</th>
-                                    <th>Kode Komp 5</th>
-                                    <th>Kode Komp 6</th>
-                                    <th>Kode Komp 7</th>
-                                    <th>Kode Komp 8</th>
+                                    <th>Laporan Kerusakan</th>
+                                    <th>Kode Barang</th>
                                     <th>Progress Status</th>
                                     <th>Last Update</th>
                                     <th>Save Action</th>
                                 </tr>
                             </thead>
                             <tbody id="active-work-tbody">
-                                <!-- Data aktif -->
+                                <!-- Data aktif via JS -->
                             </tbody>
                         </table>
                     </div>
@@ -388,44 +362,28 @@
                     </div>
 
                     <div class="table-responsive" style="margin-top: 15px; overflow-x: auto;">
-                        <table class="glass-table centered-table uniform-columns" style="min-width: 1600px;">
+                        <table class="glass-table centered-table uniform-columns" style="width: 100%;">
                             <thead>
                                 <tr>
-                                    <th>Tanggal Perbaikan</th>
+                                    <th>Tanggal</th>
                                     <th>Plant</th>
                                     <th>Nama Mesin</th>
-                                    <th>1 (Kerusakan)</th>
-                                    <th>2</th>
-                                    <th>3</th>
-                                    <th>4</th>
-                                    <th>5</th>
-                                    <th>6</th>
-                                    <th>7</th>
-                                    <th>8</th>
-                                    <th>Kode Komp 1</th>
-                                    <th>Kode Komp 2</th>
-                                    <th>Kode Komp 3</th>
-                                    <th>Kode Komp 4</th>
-                                    <th>Kode Komp 5</th>
-                                    <th>Kode Komp 6</th>
-                                    <th>Kode Komp 7</th>
-                                    <th>Kode Komp 8</th>
+                                    <th>Laporan Kerusakan</th>
+                                    <th>Kode Barang</th>
                                     <th>Final Status</th>
                                     <th>Last Update</th>
                                 </tr>
                             </thead>
                             <tbody id="finished-work-tbody">
-                                <!-- Riwayat selesai -->
+                                <!-- Riwayat selesai via JS -->
                             </tbody>
                         </table>
                     </div>
                 </div>
             </section>
 
-            <!-- 5. ABOUT PAGE (COMPANY PROFILE & CONTACTS) -->
+            <!-- 5. ABOUT PAGE -->
             <section id="page-about" class="page-content">
-                
-                <!-- BANNER HERO PERUSAHAAN DENGAN FOTO DAN KODE CITE DIHAPUS -->
                 <div class="about-hero-panel glass-panel">
                     <div class="hero-left-box">
                         <span class="slide-badge">ESTABLISHED SINCE 1973</span>
@@ -438,13 +396,11 @@
                         </a>
                     </div>
                     
-                    <!-- FOTO KOTAK HIJAU: foto3.jpg -->
                     <div class="hero-right-img-box">
                         <img src="foto3.jpg" alt="PT Surabaya Mekabox Plant" onerror="this.src='foto1.png'">
                     </div>
                 </div>
 
-                <!-- METRICS CAPACITY GRID -->
                 <div class="about-grid-4" style="margin-top: 20px;">
                     <div class="about-card glass-panel">
                         <h2>1973</h2>
@@ -464,7 +420,6 @@
                     </div>
                 </div>
 
-                <!-- SEJARAH & SUSTAINABILITY -->
                 <div class="about-main-grid" style="margin-top: 20px;">
                     <div class="about-story-card glass-panel">
                         <h3 class="text-red"><i class="fa fa-history"></i> OUR JOURNEY & HISTORY</h3>
@@ -484,7 +439,6 @@
                     </div>
                 </div>
 
-                <!-- CONTACT PERSONS & HEADQUARTERS -->
                 <div class="contact-section-panel glass-panel" style="margin-top: 20px;">
                     <h3 class="text-red" style="margin-bottom: 15px;"><i class="fa fa-address-book"></i> CONTACT PERSONS & HEADQUARTERS</h3>
                     

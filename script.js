@@ -67,7 +67,7 @@ setInterval(() => {
     showSlide(currentSlideIndex);
 }, 6000);
 
-// UPDATE MONITORING SYSTEM CATEGORY (DIRECT CLOUD FETCH DARI SPREADSHEET)
+// UPDATE MONITORING SYSTEM CATEGORY
 async function updateMonitoringCategory() {
     const selectedCategory = document.getElementById('monitoring-category-select').value;
     document.getElementById('selected-monitoring-title').innerText = selectedCategory;
@@ -76,9 +76,7 @@ async function updateMonitoringCategory() {
     tbody.innerHTML = '<tr><td colspan="9" style="text-align:center; padding:20px; font-weight:bold; color:#d32f2f;">Mengambil data real-time dari Spreadsheet tab ' + selectedCategory + '...</td></tr>';
 
     try {
-        // Ganti URL di bawah ini dengan URL Web App Google Apps Script Monitoring System Anda
         const monitoringUrl = "https://script.google.com/macros/s/AKfycbxf2XDdAnq6oO9vKH7cZ5MyGHwfxDuETvGAqfAIQjJMXd2DoCIm1pLtdG1Gz9r6rBY7/exec";
-        
         const response = await fetch(`${monitoringUrl}?sheet=${encodeURIComponent(selectedCategory)}`);
         const result = await response.json();
 
@@ -109,7 +107,7 @@ async function updateMonitoringCategory() {
     }
 }
 
-// UPDATE MACHINE CARD CATEGORY (DIRECT CLOUD FETCH DARI SPREADSHEET KARTU MESIN)
+// UPDATE MACHINE CARD CATEGORY
 async function updateMachineCategory() {
     const selectedMachine = document.getElementById('machine-category-select').value;
     document.getElementById('selected-machine-title').innerText = selectedMachine;
@@ -118,9 +116,7 @@ async function updateMachineCategory() {
     tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; padding:20px; font-weight:bold; color:#d32f2f;">Mengambil data real-time Kartu Mesin ' + selectedMachine + '...</td></tr>';
 
     try {
-        // Ganti URL di bawah ini dengan URL Web App Google Apps Script Machine Card Anda
         const machineCardUrl = "https://script.google.com/macros/s/AKfycbyJ_bHl9RO4HCLLAqBz49tZayF6Oy-XutvtpaO6dEmlRw3o9TRk5unCwDJ7X4DPw97_Ag/exec";
-        
         const response = await fetch(`${machineCardUrl}?sheet=${encodeURIComponent(selectedMachine)}`);
         const result = await response.json();
 
@@ -165,13 +161,11 @@ async function fetchLiveSpreadsheetData() {
     const activeTbody = document.getElementById('active-work-tbody');
     const finishedTbody = document.getElementById('finished-work-tbody');
     
-    activeTbody.innerHTML = '<tr><td colspan="22" style="text-align:center; padding:20px; font-weight:bold; color:#d32f2f;">Mengambil data real-time Laporan Perbaikan...</td></tr>';
+    activeTbody.innerHTML = '<tr><td colspan="8" style="text-align:center; padding:20px; font-weight:bold; color:#d32f2f;">Mengambil data real-time Laporan Perbaikan...</td></tr>';
     finishedTbody.innerHTML = '';
 
     try {
-        // Ganti URL di bawah ini dengan URL Web App Google Apps Script Repair & Maintenance Report Anda
-        const repairReportUrl = "https://script.google.com/macros/s/AKfycbx1r8Y5w6vPiaERtBophgZ1DNP3az1dXXXa5ybSdMlrkK0_pwhRu03KPPOZOpzHUVQYCA/exec";
-        
+        const repairReportUrl = "https://script.google.com/macros/s/AKfycby10PWNTtVPTYduw9MLp98yPNHeu7jXAaeZLWGA6t3XnOWxK6zPjAYsvxvl01VawRsAvg/exec";
         const response = await fetch(repairReportUrl);
         const result = await response.json();
 
@@ -184,25 +178,11 @@ async function fetchLiveSpreadsheetData() {
         savedFinished.forEach(item => {
             const fRow = document.createElement('tr');
             fRow.innerHTML = `
-                <td>${item.tanggalPerbaikan}</td>
+                <td><code>${item.tanggalPerbaikan}</code></td>
                 <td>${item.plant}</td>
                 <td><strong>${item.machineId}</strong></td>
-                <td><span style="color:#d32f2f; font-weight:bold;">${item.kerusakan[0]}</span></td>
-                <td>${item.kerusakan[1]}</td>
-                <td>${item.kerusakan[2]}</td>
-                <td>${item.kerusakan[3]}</td>
-                <td>${item.kerusakan[4]}</td>
-                <td>${item.kerusakan[5]}</td>
-                <td>${item.kerusakan[6]}</td>
-                <td>${item.kerusakan[7]}</td>
-                <td><code>${item.kode_barang[0]}</code></td>
-                <td>${item.kode_barang[1]}</td>
-                <td>${item.kode_barang[2]}</td>
-                <td>${item.kode_barang[3]}</td>
-                <td>${item.kode_barang[4]}</td>
-                <td>${item.kode_barang[5]}</td>
-                <td>${item.kode_barang[6]}</td>
-                <td>${item.kode_barang[7]}</td>
+                <td><span style="color:#d32f2f; font-weight:bold;">${item.kerusakan}</span></td>
+                <td><code style="color:#d32f2f;">${item.kode_barang}</code></td>
                 <td><span style="color:#00c853; font-weight:bold;">${item.statusText}</span></td>
                 <td><strong>${item.wibTime}</strong></td>
             `;
@@ -221,25 +201,11 @@ async function fetchLiveSpreadsheetData() {
 
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td>${ticket.tanggal_perbaikan}</td>
+                    <td><code>${ticket.tanggal_perbaikan}</code></td>
                     <td>${ticket.plant}</td>
                     <td><strong>${ticket.machine_id}</strong></td>
-                    <td><span style="color:#d32f2f; font-weight:bold;">${ticket.kerusakan[0]}</span></td>
-                    <td>${ticket.kerusakan[1]}</td>
-                    <td>${ticket.kerusakan[2]}</td>
-                    <td>${ticket.kerusakan[3]}</td>
-                    <td>${ticket.kerusakan[4]}</td>
-                    <td>${ticket.kerusakan[5]}</td>
-                    <td>${ticket.kerusakan[6]}</td>
-                    <td>${ticket.kerusakan[7]}</td>
-                    <td><code>${ticket.kode_barang[0]}</code></td>
-                    <td>${ticket.kode_barang[1]}</td>
-                    <td>${ticket.kode_barang[2]}</td>
-                    <td>${ticket.kode_barang[3]}</td>
-                    <td>${ticket.kode_barang[4]}</td>
-                    <td>${ticket.kode_barang[5]}</td>
-                    <td>${ticket.kode_barang[6]}</td>
-                    <td>${ticket.kode_barang[7]}</td>
+                    <td><span style="color:#d32f2f; font-weight:bold;">${ticket.kerusakan}</span></td>
+                    <td><code style="color:#d32f2f;">${ticket.kode_barang}</code></td>
                     <td>
                         <div style="font-size: 11px; font-weight: bold; color: #d32f2f; margin-bottom: 4px;">PILIHAN PROGRESS:</div>
                         <div class="custom-checklist-group">
@@ -252,18 +218,18 @@ async function fetchLiveSpreadsheetData() {
                     <td>
                         <div style="display: flex; gap: 5px; flex-direction: column; align-items: center;">
                             <button class="btn-temp" onclick="saveTemporary('${ticket.id}', '${ticket.machine_id}')"><i class="fa fa-save"></i> Save Temporary</button>
-                            <button class="btn-perm" onclick="savePermanent('${ticket.id}', '${ticket.timestamp}', '${ticket.tanggal_perbaikan}', '${ticket.plant}', '${ticket.machine_id}', '${encodeURIComponent(JSON.stringify(ticket.kerusakan))}', '${encodeURIComponent(JSON.stringify(ticket.kode_barang))}')"><i class="fa fa-check-circle"></i> Save Permanent</button>
+                            <button class="btn-perm" onclick="savePermanent('${ticket.id}', '${ticket.timestamp}', '${ticket.tanggal_perbaikan}', '${ticket.plant}', '${ticket.machine_id}', '${encodeURIComponent(ticket.kerusakan)}', '${encodeURIComponent(ticket.kode_barang)}')"><i class="fa fa-check-circle"></i> Save Permanent</button>
                         </div>
                     </td>
                 `;
                 activeTbody.appendChild(row);
             });
         } else {
-            activeTbody.innerHTML = `<tr><td colspan="22" style="text-align:center; color:#d32f2f; font-weight:bold; padding:20px;">Tidak ada data laporan perbaikan di Google Spreadsheet.</td></tr>`;
+            activeTbody.innerHTML = `<tr><td colspan="8" style="text-align:center; color:#d32f2f; font-weight:bold; padding:20px;">Tidak ada data laporan perbaikan di Google Spreadsheet.</td></tr>`;
         }
     } catch (error) {
         console.error("Gagal sinkronisasi data laporan:", error);
-        activeTbody.innerHTML = `<tr><td colspan="22" style="text-align:center; color:#d32f2f; font-weight:bold; padding:20px;">Gagal terhubung ke server cloud.</td></tr>`;
+        activeTbody.innerHTML = `<tr><td colspan="8" style="text-align:center; color:#d32f2f; font-weight:bold; padding:20px;">Gagal terhubung ke server cloud.</td></tr>`;
     }
 }
 
@@ -290,8 +256,8 @@ function saveTemporary(ticketId, machineId) {
 // SAVE PERMANENT
 function savePermanent(ticketId, timestamp, tanggalPerbaikan, plant, machineId, encodedKerusakan, encodedKodeBarang) {
     const wibTime = getWIBTimestamp();
-    const kerusakan = JSON.parse(decodeURIComponent(encodedKerusakan));
-    const kode_barang = JSON.parse(decodeURIComponent(encodedKodeBarang));
+    const kerusakan = decodeURIComponent(encodedKerusakan);
+    const kode_barang = decodeURIComponent(encodedKodeBarang);
 
     const isDone = document.getElementById(`chk-done-${ticketId}`).checked;
     const isPending = document.getElementById(`chk-pending-${ticketId}`).checked;
