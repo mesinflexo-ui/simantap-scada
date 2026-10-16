@@ -76,7 +76,7 @@ async function updateMonitoringCategory() {
     tbody.innerHTML = '<tr><td colspan="9" style="text-align:center; padding:20px; font-weight:bold; color:#d32f2f;">Mengambil data real-time dari Spreadsheet tab ' + selectedCategory + '...</td></tr>';
 
     try {
-        const monitoringUrl = "https://script.google.com/macros/s/AKfycbxf2XDdAnq6oO9vKH7cZ5MyGHwfxDuETvGAqfAIQjJMXd2DoCIm1pLtdG1Gz9r6rBY7/exec";
+        const monitoringUrl = "https://script.google.com/macros/s/AKfycbwhoATgClaRw5b2jLzqFi3kH6MXH5f7qT-7CcPNxQGkbEp53ly9cI1nopMlImk1OOGILw/exec";
         const response = await fetch(`${monitoringUrl}?sheet=${encodeURIComponent(selectedCategory)}`);
         const result = await response.json();
 
@@ -116,7 +116,7 @@ async function updateMachineCategory() {
     tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; padding:20px; font-weight:bold; color:#d32f2f;">Mengambil data real-time Kartu Mesin ' + selectedMachine + '...</td></tr>';
 
     try {
-        const machineCardUrl = "https://script.google.com/macros/s/AKfycbyJ_bHl9RO4HCLLAqBz49tZayF6Oy-XutvtpaO6dEmlRw3o9TRk5unCwDJ7X4DPw97_Ag/exec";
+        const machineCardUrl = "https://script.google.com/macros/s/AKfycbwNfb0Ayq2B7tg1DQelymg5bRbBob1vLRiwNyBKPQEd83gt0Z-fjJFe5X_M-BDCqmFs/exec";
         const response = await fetch(`${machineCardUrl}?sheet=${encodeURIComponent(selectedMachine)}`);
         const result = await response.json();
 
@@ -165,7 +165,7 @@ async function fetchLiveSpreadsheetData() {
     finishedTbody.innerHTML = '';
 
     try {
-        const repairReportUrl = "https://script.google.com/macros/s/AKfycby10PWNTtVPTYduw9MLp98yPNHeu7jXAaeZLWGA6t3XnOWxK6zPjAYsvxvl01VawRsAvg/exec";
+        const repairReportUrl = "https://script.google.com/macros/s/AKfycbz88E1PXQQc0m7MkYjCmRwciJ-42aUAW8JrkoJ7d0pmTgSKn1h_6Wy7Yi503zXWdVqdyA/exec";
         const response = await fetch(repairReportUrl);
         const result = await response.json();
 
